@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+}
+
+.logo img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo .companyName {
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    line-height: 1em;
+}
+
+.logo .companyName span {
+    color: #09568a;
+}
+
+/* Days */
+
+.daysLink {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 24px;
+    font-weight: 600;
+}
+
+.daysLink li {
+    color: #4a4a4a;
+    padding: 2px;
+    border-bottom: 2px solid transparent;
+    border-radius: 3px;
+    transition: all;
+    animation-duration: 200ms;
+}
+
+.daysLink li:hover {
+    border-color: #09568a;
+    color: #09568a;
+}
+
+/* Button */
+.hamburger {
+    background: #000;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    padding: 8px;
+    padding-bottom: 4px;
+}
+
+.hamburger img {
+    height: 20px;
+}
+
+.hamburger:hover {
+    background: #000000da;
+}
+
+.hamburger {
+    display: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 646px) {
+    .daysLink {
+        display: none;
+    }
+
+    .active {
+        display: flex;
+        flex-direction: column;
+        background-color: #f6f3f3;
+        width: 120px;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}

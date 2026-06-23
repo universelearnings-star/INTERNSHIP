@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    nav {
+      background: #222;
+      padding: 15px 30px;
+      position: relative;
+
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 60px;
+      /* Equal width and height */
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      /*shifts the element left by 50% of its own width.*/
+      list-style: none;
+      justify-content: space-between;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links li a {
+      text-decoration: wavy;
+      color: white;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #00bcd4;
+    }
+
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .logo img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #333;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="navbar">
+      <div class="logo">
+        <a href="#">
+          <img src="/logo.jpg" alt="You Included Logo">
+        </a>
+      </div>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <!--# is a placeholder link
+        If your website is still under development and you don't have a homepage yet,
+       you can temporarily use:*/-->
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+      ☰
+    </div>
+    </div>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+
+</body>
+
+</html>

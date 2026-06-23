@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSPL | Arya P.G.</title>
+    <link rel="stylesheet" href="dayframes.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <div class="navbar">
+            <!-- logo -->
+            <div class="logo">
+                <img src="../Day 3/logo.jpg" alt="logo" />
+                <div class="companyName">
+                    <span>You Included</span>
+
+                </div>
+            </div>
+
+            <!-- Menu-Items -->
+            <ul class="daysLink">
+                <li onclick="loadPage('Day 0/heal.html')">Day 0</li>
+                <li onclick="loadPage('Day1/index.html')">Day 1</li>
+                <li onclick="loadPage('Day 2/resume.html')">Day 2</li>
+                <li onclick="loadPage('Day 3/response_nav_assign1.html')">Day 3</li>
+                <li onclick="loadPage('Day 5 (Product card)/product.html')">Day 5</li>
+            </ul>
+
+            <!-- right button -->
+            <button class="hamburger">
+                <!-- <img src="../hambuger.png" alt="menu" /> -->
+                ☰
+            </button>
+        </div>
+
+        <!-- Days -->
+        <iframe id="dayFrame" src="Day 0/heal.html" width="100%" height="800">
+        </iframe>
+    </div>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const daysLink = document.querySelector(".daysLink");
+
+        hamburger.addEventListener("click", () => {
+            daysLink.classList.toggle("active");
+        });
+
+        function loadPage(page) {
+            let frame = document.getElementById("dayFrame");
+            frame.src = page;
+        }
+
+        // Load Day 0 by default
+        loadPage('Day 0/heal.html');
+    </script>
+</body>
+
+</html>
